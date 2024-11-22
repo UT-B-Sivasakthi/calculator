@@ -37,6 +37,7 @@ function calculate() {
   try {
     result = eval(getEquation());
   } catch (e) {
+    window.result.style.color = 'red'; 
     window.result.value = 'Please give the valid input';
     
     window.resultShown = true;
