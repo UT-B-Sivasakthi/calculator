@@ -1,142 +1,172 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    height: 100%;
-    font-family: Roboto, sans-serif;
-    font-size: 100%;
-    line-height: 1.4;
-    background-color: #121212; /* Dark background for the whole page */
-    color: #e0e0e0; /* Light text color for better contrast */
-  }
-  
-  .wrapper {
-    width: 90%;
-    margin: 3% auto;
-    padding: 3%;
-    background-color: #1f1f1f; /* Darker background for the wrapper */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for elevation */
-  }
-  
-  .title {
-    text-align: center;
-    color: #e0e0e0; /* Light text for the title */
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Roboto, sans-serif;
+  font-size: 100%;
+  line-height: 1.4;
+  background-color: #121212; /* Dark background for the whole page */
+  color: #e0e0e0; /* Light text color for better contrast */
+}
+
+.wrapper {
+  width: 90%;
+  margin: 3% auto;
+  padding: 3%;
+  background-color: #1f1f1f; /* Darker background for the wrapper */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for elevation */
+}
+
+.title {
+  text-align: center;
+  color: #e0e0e0; /* Light text for the title */
+}
+
+.calculator {
+  display: flex;
+  width: 50%;
+  margin: 5% auto;
+  padding: 3%;
+  flex-direction: column;
+  background-color: #292929; /* Dark background for the calculator */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Elevated dark shadow */
+  border-radius: 8px;
+}
+
+.result {
+  margin-bottom: 30px;
+  padding: 3%;
+  font-size: 1.3rem;
+  text-align: right;
+  background-color: #333333; /* Darker input field background */
+  color: #e0e0e0; /* Light text color for input */
+  border: none;
+  outline: none;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for the result */
+  border-radius: 4px;
+}
+
+.numpad {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 10px;
+}
+
+.numbers {
+  display: grid;
+  margin-top: 65px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 50px);
+  grid-gap: 15px;
+}
+
+.operations {
+  display: grid;
+  grid-template-rows: repeat(5, 50px);
+  grid-gap: 15px;
+}
+
+.button {
+  font-size: 1.3rem;
+  background-color: #444444; /* Darker button background */
+  color: #e0e0e0; /* Light text color */
+  border: none;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for buttons */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded edges for modern look */
+}
+
+.button:hover {
+  box-shadow: 0 0 2px #0f0, 0 0 5px #0f0;
+  transform: scale(1.1);
+}
+
+.operation {
+  background-color: #5a005a; /* Dark purple for operations */
+  font-weight: bold;
+  color: #ffd700; /* Golden text for operations */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.operation:hover {
+  box-shadow: 0 0 2px #ffbf00, 0 0 5px #f9e9aa; /* Neon pink glow */
+  transform: scale(1.1); /* Slight enlargement */
+}
+
+.equal {
+  background-color: #800080; /* Vibrant purple for the equal button */
+  color: #ffffff; /* White text for equal button */
+  font-weight: bold;
+  font-size: 1.8rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.equal:hover {
+  box-shadow: 0 0 2px #e8e7e7, 0 0 5px #e6e5e5d4;
+  transform: scale(1.2); /* More prominent enlargement */
+}
+.btn-nav {
+  background-color: #1f1f1f;
+  padding: 4px 12px 4px 12px;
+  width: 170px;
+  border-radius: 4px;
+  box-shadow: none;
+  color: white;
+  text-align: none;
+}
+.btn-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+.btn-nav:hover {
+  width: 170px;
+  background-color: #1f1f1f;
+  padding: 4px 12px 4px 12px;
+  border-radius: 4px;
+  box-shadow: 0 0 2px #0f0, 0 0 5px #0f0;
+  transform: scale(1.1);
+  text-decoration: none;
+}
+.div-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.div-content .col{
+  padding: 5px;
+}
+@media screen and (max-width: 800px) {
   .calculator {
-    display: flex;
-    width: 50%;
-    margin: 5% auto;
-    padding: 3%;
-    flex-direction: column;
-    background-color: #292929; /* Dark background for the calculator */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Elevated dark shadow */
-    border-radius: 8px;
+    width: 70%;
   }
-  
-  .result {
-    margin-bottom: 30px;
-    padding: 3%;
-    font-size: 1.3rem;
-    text-align: right;
-    background-color: #333333; /* Darker input field background */
-    color: #e0e0e0; /* Light text color for input */
-    border: none;
-    outline: none;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for the result */
-    border-radius: 4px;
+}
+
+@media screen and (max-width: 600px) {
+  .calculator {
+    width: 90%;
   }
-  
-  .numpad {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-gap: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    width: 100%;
+    margin: 8% auto;
   }
-  
-  .numbers {
-    display: grid;
-    margin-top: 65px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 50px);
-    grid-gap: 15px;
+}
+
+@media screen and (max-width: 420px) {
+  .calculator {
+    width: 95%;
   }
-  
-  .operations {
-    display: grid;
-    grid-template-rows: repeat(5, 50px);
-    grid-gap: 15px;
-  }
-  
-  .button {
-    font-size: 1.3rem;
-    background-color: #444444; /* Darker button background */
-    color: #e0e0e0; /* Light text color */
-    border: none;
-    outline: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for buttons */
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    border-radius: 4px; /* Rounded edges for modern look */
-  }
-  
-  .button:hover {
-    box-shadow: 0 0 2px #0f0, 0 0 5px #0f0;
-    transform: scale(1.1); /* Slight enlargement on hover */
-  }
-  
-  .operation {
-    background-color: #5a005a; /* Dark purple for operations */
-    font-weight: bold;
-    color: #ffd700; /* Golden text for operations */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .operation:hover {
-    box-shadow: 0 0 2px #ffbf00, 0 0 5px #f9e9aa; /* Neon pink glow */
-    transform: scale(1.1); /* Slight enlargement */
-  }
-  
-  .equal {
-    background-color: #800080; /* Vibrant purple for the equal button */
-    color: #ffffff; /* White text for equal button */
-    font-weight: bold;
-    font-size: 1.8rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .equal:hover {
-    box-shadow: 0 0 2px #e8e7e7, 0 0 5px #e6e5e5d4;
-    transform: scale(1.2); /* More prominent enlargement */
-  }
-  
-  @media screen and (max-width: 800px) {
-    .calculator {
-      width: 70%;
-    }
-  }
-  
-  @media screen and (max-width: 600px) {
-    .calculator {
-      width: 90%;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .wrapper {
-      width: 100%;
-      margin: 8% auto;
-    }
-  }
-  
-  @media screen and (max-width: 420px) {
-    .calculator {
-      width: 95%;
-    }
-  }
-  
+}
