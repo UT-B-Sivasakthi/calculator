@@ -1,0 +1,12 @@
+.navbar{
+    background: #ac1655 100% !important; 
+}
+.btn-link{
+color: aliceblue;
+font-weight: bold;
+}
+.btn-link:hover{
+    color: aliceblue;
+    font-weight: bold;
+    text-decoration: underline;
+    }
