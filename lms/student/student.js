@@ -20,9 +20,13 @@ function checkLogin() {
 }
 
 function logout() {
+  // Remove the loginUser item from session storage
   sessionStorage.removeItem("loginUser");
-  location.reload();
+
+  // Redirect to lms/index.html after logging out
+  window.location.href = "../../lms/index.html";
 }
+
 
 function getCourses() {
   let studentCourses = assignCourse.find(

@@ -20,9 +20,13 @@ function checkLogin() {
 }
 
 function logout() {
-  sessionStorage.removeItem("loginUser");
-  location.reload();
-}
+    // Remove the loginUser item from session storage
+    sessionStorage.removeItem("loginUser");
+  
+    // Redirect to lms/index.html after logging out
+    window.location.href = "../../lms/index.html";
+  }
+  
 let assignCourses = JSON.parse(localStorage.getItem("assignCourses"));
 let users = JSON.parse(localStorage.getItem("users"));
 function getStudents() {
