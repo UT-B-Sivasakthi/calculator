@@ -57,6 +57,7 @@ function editTask(index) {
   const inputElement = document.createElement("input");
 
   inputElement.value = existingText;
+  inputElement.classList.add("edit-input");
   todoItem.replaceWith(inputElement);
   inputElement.focus();
 
@@ -64,9 +65,16 @@ function editTask(index) {
     const updatedText = inputElement.value.trim();
     if (updatedText) {
       todo[index].text = updatedText;
-      saveToLocalStorage();
     }
+    todo[index].disabled = false; // Ensure task is not disabled after editing
+    saveToLocalStorage();
     displayTasks();
+  });
+
+  inputElement.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      inputElement.blur(); // Trigger blur to save the task
+    }
   });
 }
 

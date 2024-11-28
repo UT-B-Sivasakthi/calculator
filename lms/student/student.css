@@ -1,3 +1,19 @@
 .navbar{
     background: #ac1655 100% !important; 
 }
+.btn-link.logout{
+    color: white;
+    text-decoration: none;
+}
+.btn-link.logout:hover{
+    color: white;
+    text-decoration: underline;
+}
+.btn-link.logout:focus{
+    color: white;
+    text-decoration: underline;
+}
+.btn-link.logout:active{
+    color: white;
+    text-decoration: underline;
+}
